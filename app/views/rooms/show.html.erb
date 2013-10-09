@@ -1,0 +1,16 @@
+<% content_for :title do  %>
+  <%= @room && @room.name or "Untitled Room" %>
+<% end %>
+
+<p id='description'>
+  <%= @room.description %>
+</p>
+
+
+<div id="background_image"><img src="<%= @room.background_image %>"></div>
+
+<% @room.outgoing_connections.each do |c| %>
+<p>
+<%= link_to "Take the #{c.connection_name.capitalize} connection to #{Room.find(c.ending_room_id).name.capitalize}", controller: "rooms", action: "show", id: c.ending_room_id  %>
+</p>
+<% end %>

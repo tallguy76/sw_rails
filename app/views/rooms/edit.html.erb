@@ -1,0 +1,30 @@
+<% content_for :title do  %>
+  Edit a Room
+<% end %>
+
+<p>Here you can edit rooms</p>
+
+<%= simple_form_for @room, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, value:@room.name %>
+  <%= f.input :description, value:@room.description %>
+  <%= f.input :background_image, value:@room.background_image %>
+  <%= f.button :submit %>
+<% end %>
+
+<p>Items:</p>
+<ul>
+  <% @room.items.each do |i| %>
+  <li>
+    <%= i.name %> <%= link_to "edit", controller: "items", action: "edit", room_id: @room.id, item_id: i.id %>
+  </li>
+  <% end %>
+</ul>
+
+<p>Connections:</p>
+<ul>
+  <% @room.outgoing_connections.each do |i| %>
+  <li>
+    <%= i.connection_name %> <%= link_to "edit", controller: "connections", action: "edit", room_id: @room.id, connection_id: i.id %>
+  </li>
+  <% end %>
+</ul>

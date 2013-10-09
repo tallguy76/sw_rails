@@ -1,0 +1,15 @@
+<% content_for :title do  %>
+  Edit Item
+<% end %>
+
+<%= simple_form_for @item, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, value: @item.name %>
+  <%= f.input :description, value: @item.description  %>
+  <%= f.input :image_url, value: @item.image_url %>
+  <%= f.input :x_coord, value: @item.x_coord  %>
+  <%= f.input :y_coord, value: @item.y_coord  %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+
+
+  <%= f.button :submit %>
+<% end %>

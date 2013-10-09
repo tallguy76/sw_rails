@@ -1,0 +1,12 @@
+<% content_for :title do  %>
+  Edit a Player
+<% end %>
+
+<%= simple_form_for @player, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :name , value: @player.name %>
+  <%= f.input :description, value: @player.description %>
+  <%= f.input :avatar_image, value: @player.avatar_image %>
+
+
+  <%= f.button :submit %>
+<% end %>

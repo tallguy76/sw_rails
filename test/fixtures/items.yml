@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image_url: MyString
+  description: MyString
+  room_id: 1
+  x_coord: 1
+  y_coord: 1
+
+two:
+  name: MyString
+  image_url: MyString
+  description: MyString
+  room_id: 1
+  x_coord: 1
+  y_coord: 1

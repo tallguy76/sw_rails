@@ -1,9 +1,22 @@
 StackworldRails::Application.routes.draw do
+  get "players/edit"
+  get "players/new"
+  get "connections/new"
+  get "connections/edit"
+  get "items/new"
+  get "items/edit"
+  resources :rooms
+  resources :items
+  resources :connections
+  resources :players
+  get "rooms/new"
+  get "rooms/edit"
+  get "rooms/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'players#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -39,7 +52,7 @@ StackworldRails::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

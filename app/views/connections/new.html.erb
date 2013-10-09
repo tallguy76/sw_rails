@@ -1,0 +1,12 @@
+<% content_for :title do  %>
+  Create a Connection
+<% end %>
+
+
+<%= simple_form_for @connection, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :ending_room_id, collection: Room.all.
+    map{|r| r.id}.select{ |r| r != @room.id} %>
+  <%= f.hidden_field :starting_room_id, value: @room.id %>
+  <%= f.input :connection_name %>
+  <%= f.button :submit %>
+<% end %>
