@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
+
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-group :development
+group :development do
   gem 'sqlite3'
 end
-group :production
+group :production do
   gem 'pg'
 end
 # Use SCSS for stylesheets
